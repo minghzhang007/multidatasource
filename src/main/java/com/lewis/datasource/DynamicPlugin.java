@@ -1,5 +1,7 @@
-package com.lewis.tmp;
+package com.lewis.datasource;
 
+import com.lewis.tmp.DynamicDataSourceGlobal;
+import com.lewis.tmp.DynamicDataSourceHolder;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.keygen.SelectKeyGenerator;
 import org.apache.ibatis.mapping.BoundSql;
@@ -8,14 +10,15 @@ import org.apache.ibatis.mapping.SqlCommandType;
 import org.apache.ibatis.plugin.*;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
-/*import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;*/
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
+
+/*import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;*/
 
 @Intercepts({
         @Signature(type = Executor.class, method = "update", args = {

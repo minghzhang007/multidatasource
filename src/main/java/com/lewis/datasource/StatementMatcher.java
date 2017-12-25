@@ -5,12 +5,16 @@ import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlCommandType;
 
+import javax.annotation.Resource;
 import java.util.Locale;
 
 /**
  * Created by zhangminghua
  */
 public abstract class StatementMatcher {
+
+    @Resource
+    private DatasourceProvider datasourceProvider;
 
     private static final String REGEX = ".*insert\\u0020.*|.*delete\\u0020.*|.*update\\u0020.*";
 

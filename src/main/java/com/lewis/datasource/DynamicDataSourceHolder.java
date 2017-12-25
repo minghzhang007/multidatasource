@@ -1,17 +1,17 @@
 package com.lewis.datasource;
 
 public class DynamicDataSourceHolder {
-    private static final ThreadLocal<DatasourceKey> holder = new ThreadLocal<DatasourceKey>();
+    private static final ThreadLocal<String> holder = new ThreadLocal<String>();
 
     private DynamicDataSourceHolder() {
         //
     }
 
-    public static void putDataSource(DatasourceKey dataSource) {
-        holder.set(dataSource);
+    public static void putDataSourceKey(String dataSourceKey) {
+        holder.set(dataSourceKey);
     }
 
-    public static DatasourceKey getDataSource() {
+    public static String getDataSourceKey() {
         return holder.get();
     }
 

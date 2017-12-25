@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <commons-collections.version>3.2.2</commons-collections.version>
         <lombok.version>1.16.16</lombok.version>
+        <mybatis.version>3.4.4</mybatis.version>
     </properties>
 
     <dependencies>
@@ -27,6 +28,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
         </dependency>
 
         <dependency>
